@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>SpendWise</title>
+  <link rel="stylesheet" href="style.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>SpendWise</h1>
+    <div class="card">
+      <h2>Add New Expense</h2>
+      <input id="desc" placeholder="e.g., Coffee with colleagues"/>
+      <input id="amount" type="number" placeholder="Amount"/>
+      <select id="category">
+        <option value="">Select a category</option>
+        <option>Food</option>
+        <option>Travel</option>
+        <option>Entertainment</option>
+        <option>Shopping</option>
+        <option>Other</option>
+      </select>
+      <input id="date" type="date" max="02-06-2025" />
+      <button onclick="addExpense()">Add Expense</button>
+    </div>
+
+    <div class="summary">
+      <div class="box">
+        <h3>This Week's Spending</h3>
+        <p id="weekTotal">0.00</p>
+        <small>Total spent from May 26 to Jun 1</small>
+      </div>
+      <div class="box">
+        <h3>This Month's Spending</h3>
+        <p id="monthTotal">0.00</p>
+        <small>Total spent in June 2025</small>
+      </div>
+    </div>
+    <div class="card" style="margin-top: 20px; text-align: center;">
+      <button onclick="clearAllExpenses()" style="background-color: #e74c3c;">Clear All Expenses</button>
+    </div>
+    <div id="weeklyChartContainer" class="card">
+      <h2>Weekly Spending Trend</h2>
+      <canvas id="weeklyChart"></canvas>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
